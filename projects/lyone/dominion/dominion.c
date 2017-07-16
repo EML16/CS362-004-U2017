@@ -149,7 +149,6 @@ int initializeGame(int numPlayers, int kingdomCards[10], int randomSeed,
 	  state->deckCount[i]++;		
 	}
     }
-
   //shuffle player decks
   for (i = 0; i < numPlayers; i++)
     {
@@ -667,7 +666,7 @@ static int adventurerEffect(struct gameState *state)
 	}
 	while(z-1>=0){
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-		//z=z-1;	//This bug is introduced intentionally to fulfil the requirements of assignment-2. Uncomment it!
+		z=z-1;	//This bug is introduced intentionally to fulfil the requirements of assignment-2. Uncomment it!
 	}
 	return 0;
 }
@@ -695,7 +694,6 @@ static int feastEffect(int choice1, struct gameState *state)
 	int temphand[MAX_HAND];// moved above the if statement
 
 	//gain card with cost up to 5
-	
 	//Backup hand
 	for (i = 0; i <= state->handCount[currentPlayer]; i++){
 		temphand[i] = state->hand[currentPlayer][i];//Backup card
