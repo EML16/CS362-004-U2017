@@ -36,7 +36,7 @@ player: player.c interface.o
 all: playdom player testDrawCard testBuyCard badTestDrawCard
 
 ################################################################################
-# Unit Tests (Assignment 2)
+# Unit Tests (Assignment 3)
 ################################################################################
 asserttrue.o: asserttrue.h asserttrue.c
 	gcc -c asserttrue.c $(CFLAGS)
