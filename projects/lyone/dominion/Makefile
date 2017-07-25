@@ -73,5 +73,17 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 
 ################################################################################
 
+################################################################################
+# Random Tests (Assignment 4)
+################################################################################
+
+randomtestcard1: randomtestcard1.c asserttrue.o dominion.o rngs.o
+	gcc -g -o randomtestcard1 randomtestcard1.c dominion.o rngs.o asserttrue.o $(CFLAGS)
+
+randomtestcard2: dominion.o randomtestcard2.c asserttrue.o rngs.o
+	gcc -g -o randomtestcard2 randomtestcard2.c dominion.o rngs.o asserttrue.o $(CFLAGS)
+
+################################################################################
+
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe

@@ -666,7 +666,7 @@ static int adventurerEffect(struct gameState *state)
 	}
 	while(z-1>=0){
 		state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
-		z=z-1;	//This bug is introduced intentionally to fulfil the requirements of assignment-2. Uncomment it!
+		z=z-1;	
 	}
 	return 0;
 }
@@ -677,7 +677,7 @@ static int smithyEffect(struct gameState *state, int handPos)
 	int currentPlayer = whoseTurn(state);
 	
 	//+3 Cards
-	for (i = 0; i <= 3; i++)//It is a bug to use <= instead of <. It is introduced intentionally to fulfil the requirements of assignment-2. Change it back to <.
+	for (i = 0; i < 3; i++)//It is a bug to use <= instead of <. It is introduced intentionally to fulfil the requirements of assignment-2. Change it back to <.
 	{
 		drawCard(currentPlayer, state);
 	}
@@ -866,20 +866,14 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
   int i;
   int j;
   int k;
-  int x;
   int index;
   int currentPlayer = whoseTurn(state);
   int nextPlayer = currentPlayer + 1;
 
   int tributeRevealedCards[2] = {-1, -1};
-  int temphand[MAX_HAND];// moved above the if statement
-  int drawntreasure=0;
-  int cardDrawn;
-  int z = 0;// this is the counter for the temp hand
   if (nextPlayer > (state->numPlayers - 1)){
     nextPlayer = 0;
   }
-  
 	
   //uses switch to select card and perform actions
   switch( card ) 
