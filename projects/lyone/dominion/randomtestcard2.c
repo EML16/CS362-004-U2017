@@ -1,15 +1,12 @@
-/*
- *  randomtestcard2.c
-  	Random test for smithy 
-*/
-
 #include <stdio.h> 
 #include <stdlib.h> 
 #include <time.h> 
 #include "asserttrue.h"
 #include "dominion.h"
 
-#define MAX_TESTS 4 
+//Test effect of playing smithy 
+
+#define MAX_TESTS 10 
 
 int testSmithyEffect()
 {
@@ -65,14 +62,14 @@ int testSmithyEffect()
 	if(all_passed)
 		printf("\nTEST COMPLETED SUCCESSFULLY\n");
 	else
-		printf("TEST FAILED\n");
+		printf("\nTEST FAILED\n");
 
 	return 0;
 }
 
 int main()
 {
-	printf("\n\nTesting smithyEffect() defined in dominion.c\n");
+	printf("\nTesting effect of playing smithy\n");
 	testSmithyEffect();
 	printf("\n\n");
 	return 0;

@@ -44,15 +44,15 @@ int asserttrue(int exp1, int exp2, char op, int flag, const char *fmt, ...)
 int asserttrue2(int exp1, int exp2, const char* op, int flag, const char *fmt, ...)
 {
 	int result;
-	if(strcmp(op, "="))
+	if(strcmp(op, "=") == 0)
 		result = (exp1 == exp2);
-	else if(strcmp(op, ">="))
+	else if(strcmp(op, ">=") == 0)
 		result = (exp1 >= exp2);
-	else if(strcmp(op, ">"))
+	else if(strcmp(op, ">") == 0)
 		result = (exp1 > exp2);
-	else if(strcmp(op, "<="))
+	else if(strcmp(op, "<=") == 0)
 		result = (exp1 <= exp2);
-	else if(strcmp(op, "<"))
+	else if(strcmp(op, "<") == 0)
 		result = (exp1 < exp2);
 	else
 		result = 0;

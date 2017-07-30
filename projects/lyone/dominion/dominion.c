@@ -677,7 +677,7 @@ static int smithyEffect(struct gameState *state, int handPos)
 	int currentPlayer = whoseTurn(state);
 	
 	//+3 Cards
-	for (i = 0; i < 3; i++)//It is a bug to use <= instead of <. It is introduced intentionally to fulfil the requirements of assignment-2. Change it back to <.
+	for (i = 0; i < 3; i++)
 	{
 		drawCard(currentPlayer, state);
 	}

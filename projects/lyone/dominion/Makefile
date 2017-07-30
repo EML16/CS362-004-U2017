@@ -83,8 +83,23 @@ randomtestcard1: randomtestcard1.c asserttrue.o dominion.o rngs.o
 randomtestcard2: dominion.o randomtestcard2.c asserttrue.o rngs.o
 	gcc -g -o randomtestcard2 randomtestcard2.c dominion.o rngs.o asserttrue.o $(CFLAGS)
 
-randomtestcard3: dominion.o randomtestcard3.c asserttrue.o rngs.o
-	gcc -g -o randomtestcard3 randomtestcard3.c dominion.o rngs.o asserttrue.o $(CFLAGS)
+randomtestadventurer: dominion.o randomtestadventurer.c asserttrue.o rngs.o
+	gcc -g -o randomtestadventurer randomtestadventurer.c dominion.o rngs.o asserttrue.o $(CFLAGS)
+
+randomtestcard1.out: randomtestcard1
+	./randomtestcard1 > randomtestcard1.out
+	gcov -f dominion.c >> randomtestcard1.out 
+	cat dominion.c.gcov >> randomtestcard1.out 
+
+randomtestcard2.out: randomtestcard2
+	./randomtestcard2 > randomtestcard2.out
+	gcov -f dominion.c >> randomtestcard2.out 
+	cat dominion.c.gcov >> randomtestcard2.out 
+
+randomtestadventurer.out: randomtestcardadventurer
+	./randomtestcardadventurer > randomtestcardadventurer.out
+	gcov -f dominion.c >> randomtestcardadventurer.out 
+	cat dominion.c.gcov >> randomtestcardadventurer.out 
 
 ################################################################################
 
