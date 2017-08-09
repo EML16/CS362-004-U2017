@@ -2,7 +2,7 @@
 #include <stdlib.h> 
 #include <time.h> 
 #include "asserttrue.h"
-#include "dominion.h"
+#include "dominion/dominion.h"
 
 //Test effect of playing smithy 
 

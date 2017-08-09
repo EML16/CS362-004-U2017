@@ -1,4 +1,4 @@
-#include "dominion.h"
+#include "dominion/dominion.h"
 #include "asserttrue.h"
 #include <stdio.h>
 #include <stdlib.h>

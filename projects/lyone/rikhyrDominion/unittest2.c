@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "dominion.h"
+#include "dominion/dominion.h"
 #include "asserttrue.h"
 
 static char *card_names[] = {

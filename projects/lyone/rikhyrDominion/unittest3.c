@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "asserttrue.h"
-#include "dominion.h"
+#include "dominion/dominion.h"
 
 int testIsGameOver()
 {
