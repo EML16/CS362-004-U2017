@@ -1,0 +1,26 @@
+There is a bug in my teammate's implementation of the effect of playing smithy.
+The following is snippet of the output of the test code, randomtestcard2.c:
+
+##################################
+Test 1. a 4-player game
+Player 4's turn
+- Passed. Playing smithy
+x Failed. Hand count before and after playing smithy: 296 299
+- Passed. Action count before and after playing smithy: 4 3
+
+Test 2. a 2-player game
+Player 1's turn
+- Passed. Playing smithy
+x Failed. Hand count before and after playing smithy: 405 408
+- Passed. Action count before and after playing smithy: 10 9
+
+Test 3. a 3-player game
+Player 3's turn
+- Passed. Playing smithy
+x Failed. Hand count before and after playing smithy: 199 202
+- Passed. Action count before and after playing smithy: 7 6
+##################################
+
+As we can see, my teammate's implementation is not properly updating the hand count.
+This is due to the extra loop iteration inside my teammate's function my_smithy(), defined
+in dominion.c. The loop should have iterated three times instead of four times.

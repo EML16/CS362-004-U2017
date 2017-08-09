@@ -6,37 +6,8 @@ rngs.o: dominion/rngs.h dominion/rngs.c
 dominion.o: dominion/dominion.h dominion/dominion.c rngs.o
 	gcc -c dominion/dominion.c -g  $(CFLAGS)
 
-playdom: dominion.o dominion/playdom.c
-	gcc -o playdom dominion/playdom.c -g dominion.o rngs.o $(CFLAGS)
-#To run playdom you need to entere: ./playdom <any integer number> like ./playdom 10*/
-testDrawCard: dominion/testDrawCard.c dominion.o rngs.o
-	gcc  -o testDrawCard -g  dominion/testDrawCard.c dominion.o rngs.o $(CFLAGS)
-
-badTestDrawCard: dominion/badTestDrawCard.c dominion.o rngs.o
-	gcc -o badTestDrawCard -g  dominion/badTestDrawCard.c dominion.o rngs.o $(CFLAGS)
-
-testBuyCard: dominion/testDrawCard.c dominion.o rngs.o
-	gcc -o testDrawCard -g  dominion/testDrawCard.c dominion.o rngs.o $(CFLAGS)
-
-testAll: dominion.o dominion/testSuite.c
-	gcc -o testSuite dominion/testSuite.c -g  dominion.o rngs.o $(CFLAGS)
-
-interface.o: dominion/interface.h dominion/interface.c
-	gcc -c dominion/interface.c -g  $(CFLAGS)
-
-runtests: testDrawCard 
-	./testDrawCard &> unittestresult.out
-	gcov dominion/dominion.c >> unittestresult.out
-	cat dominion/dominion.c.gcov >> unittestresult.out
-
-
-player: dominion/player.c interface.o
-	gcc -o player dominion/player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
-
-all: playdom player testDrawCard testBuyCard badTestDrawCard
-
 ################################################################################
-# Unit Tests (Assignment 3)
+# Unit Tests 
 ################################################################################
 asserttrue.o: asserttrue.h asserttrue.c
 	gcc -c asserttrue.c $(CFLAGS)
@@ -61,7 +32,7 @@ unittestresults.out: unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2
 ################################################################################
 
 ################################################################################
-# Random Tests (Assignment 4)
+# Random Tests 
 ################################################################################
 
 randomtestcard1: randomtestcard1.c asserttrue.o dominion.o rngs.o
