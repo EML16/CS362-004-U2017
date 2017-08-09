@@ -1,0 +1,15 @@
+CFLAGS = -Wall -fpic -coverage -lm 
+
+testme: testme.c
+	gcc -o testme testme.c $(CFLAGS)
+	
+randomstring.out: testme
+	./testme > randomstring.out
+	gcov -b -c -f testme.c >> randomstring.out
+
+all: testme randomstring.out
+
+clean: 
+	rm -f testme testme.exe randomstring.out *.gcov *.gcda *.gcno
+
+	
